@@ -58,7 +58,7 @@ body {
     text-transform: uppercase;
     color: white;
     align-self: flex-end;
-    margin-right: -75px;
+    margin-right: -100px;
 }
 
 .nav-link {
@@ -590,5 +590,13 @@ ul {
 
     .text-section p {
         text-align: center; /* Asegura que los párrafos estén centrados */
+    }
+
+    .logo-left {
+        margin-left: -15px;
+    }
+    
+    .logo-right {
+        margin-right: -50px;
     }
 }
