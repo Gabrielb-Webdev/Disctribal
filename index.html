@@ -54,10 +54,8 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#camiones">Camiones</a></li>
                         <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#localidades">Localidades</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contactanos">Contáctanos</a></li>
                     </ul>
                 </div>
@@ -65,7 +63,7 @@
         </nav>
 
         <!-- Primera Sección -->
-        <section class="info-section container py-5 mt-md-0 mt-5" data-aos="fade-up" data-aos-offset="200">
+        <section id="inicio" class="info-section container py-5 mt-md-0 mt-5" data-aos="fade-up" data-aos-offset="200">
             <div class="row align-items-center flex-md-row flex-column-reverse">
                 <!-- Texto a la izquierda -->
                 <div class="col-md-6 text-section" data-aos="fade-up">
@@ -93,7 +91,7 @@
 
 
         <!-- Segunda Sección -->
-        <section class="info-section container py-5" data-aos="fade-right" data-aos-offset="200">
+        <section id="camiones" class="info-section container py-5" data-aos="fade-right" data-aos-offset="200">
             <div class="row align-items-center">
                 <!-- Carousel a la izquierda -->
                 <div class="col-md-6">
@@ -148,7 +146,7 @@
         </section>
 
         <!-- Tercera Sección - Cards -->
-        <section class="cards-section container py-5" data-aos="zoom-in" data-aos-offset="200">
+        <section id="servicios" class="cards-section container py-5" data-aos="zoom-in" data-aos-offset="200">
             <div class="row">
                 <!-- Primera Card -->
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
@@ -185,7 +183,7 @@
         </section>
 
         <!-- Quinta Sección - Contacto -->
-        <section class="contact-section">
+        <section id="contactanos" class="contact-section">
             <div class="contact-container">
                 <!-- Mapa a la izquierda -->
                 <div class="contact-map">
@@ -329,6 +327,32 @@
                             whatsappButton.style.pointerEvents = "auto";
                         }
                     }
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Selecciona todos los enlaces dentro de la navbar
+                document.querySelectorAll(".navbar-nav a").forEach(anchor => {
+                    anchor.addEventListener("click", function (e) {
+                        e.preventDefault(); // Previene el comportamiento por defecto del enlace
+        
+                        const targetId = this.getAttribute("href").substring(1); // Obtiene el ID de la sección
+                        const targetSection = document.getElementById(targetId); // Encuentra la sección correspondiente
+        
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 70, // Ajusta la posición del scroll
+                                behavior: "smooth" // Activa el desplazamiento suave
+                            });
+        
+                            // Cierra el menú en dispositivos móviles
+                            const navbarCollapse = document.querySelector(".navbar-collapse");
+                            if (navbarCollapse.classList.contains("show")) {
+                                navbarCollapse.classList.remove("show");
+                            }
+                        }
+                    });
                 });
             });
         </script>
