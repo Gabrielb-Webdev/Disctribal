@@ -90,6 +90,7 @@ body {
     line-height: 1.6;
 }
 
+
 .image-section img,
 .carousel-inner img {
     max-width: 100%;
@@ -575,5 +576,19 @@ ul {
     }
     .cards-section .col-md-4 {
         flex: 1 1 100%; /* Ocupan toda la pantalla en móviles */
+    }
+}
+
+@media (max-width: 768px) { /* Aplica el estilo solo en pantallas menores a 768px */
+    .text-section {
+        background-color: #318CE7;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center; /* Centrar el texto en móviles */
+    }
+
+    .text-section p {
+        text-align: center; /* Asegura que los párrafos estén centrados */
     }
 }
