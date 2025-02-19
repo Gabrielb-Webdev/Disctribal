@@ -417,6 +417,37 @@ ul {
     background-color: #299ebb;
   }
   
+  /* Centrar contenido del footer en mobile */
+@media (max-width: 768px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .example-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite mejor ajuste en pantallas pequeñas */
+        gap: 15px; /* Espaciado entre los iconos */
+        padding: 10px 0;
+    }
+
+    .example-2 .icon-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .whatsapp-float {
+        right: 10px; /* Ajustar para que no tape los íconos */
+        bottom: 60px; /* Elevar un poco para que no se sobreponga */
+    }
+}
+
 
 /* ===== BOTÓN FLOTANTE DE whatsapp ===== */
 .whatsapp-float {
@@ -444,6 +475,10 @@ ul {
 .whatsapp-icon {
     width: 35px;
     height: 35px;
+}
+
+.whatsapp-float {
+    transition: opacity 0.4s ease-in-out;
 }
 
 /* Fondo Animado */

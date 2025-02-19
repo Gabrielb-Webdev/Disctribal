@@ -312,6 +312,27 @@
                 });
             });                     
         </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const whatsappButton = document.querySelector(".whatsapp-float");
+        
+                window.addEventListener("scroll", function () {
+                    if (window.innerWidth <= 768) { // Solo en móviles
+                        let scrollPosition = window.innerHeight + window.scrollY;
+                        let documentHeight = document.documentElement.scrollHeight;
+        
+                        if (scrollPosition >= documentHeight - 10) {
+                            whatsappButton.style.opacity = "0"; // Oculta el botón
+                            whatsappButton.style.pointerEvents = "none"; // Evita clics
+                        } else {
+                            whatsappButton.style.opacity = "1"; // Muestra el botón
+                            whatsappButton.style.pointerEvents = "auto";
+                        }
+                    }
+                });
+            });
+        </script>
+        
 
     </body>
 
